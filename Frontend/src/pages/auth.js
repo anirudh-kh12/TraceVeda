@@ -223,7 +223,10 @@ document
             submitButton.disabled = true;
             submitButton.textContent = "Signing in…";
         }
-        showAuthMessage("Signing in…", "info");
+        showAuthMessage(
+            "Please note: TraceVeda is hosted on a free Render instance. After a period of inactivity, the service may take approximately 50–70 seconds to start. Please keep this page open while your sign-in request is processed.",
+            "info"
+        );
 
         try {
             const response = await fetch(`${API_URL}/api/auth/login`, {

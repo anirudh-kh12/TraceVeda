@@ -4231,6 +4231,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             <button type="button" id="tvAssistantNewChat" class="tv-assistant-icon-button" title="Start a new chat" aria-label="Start a new chat"><i class="fa-solid fa-rotate-right"></i></button>
             <button type="button" id="tvAssistantClose" class="tv-assistant-icon-button" title="Close assistant" aria-label="Close assistant"><i class="fa-solid fa-xmark"></i></button>
         </header>
+        <div
+            id="tvAssistantServiceNotice"
+            class="tv-assistant-service-notice"
+            role="status"
+            aria-live="polite"
+            hidden
+        >
+            <strong>Service availability notice:</strong>
+            TraceVeda is hosted on a free Render instance. After a period of inactivity, the
+            service may take approximately 50–70 seconds to start. Please keep this chat open
+            while your request is processed.
+        </div>
         <div id="tvAssistantMessages" class="tv-assistant-messages" aria-live="polite" aria-relevant="additions text"></div>
         <div id="tvAssistantQuickActions" class="tv-assistant-quick-actions"></div>
         <form id="tvAssistantForm" class="tv-assistant-form">
@@ -4516,7 +4528,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         </form>
 
-        <div class="auth-message" id="authMessage"></div>
+        <div class="auth-message" id="authMessage" role="status" aria-live="polite"></div>
 
     </div>
 

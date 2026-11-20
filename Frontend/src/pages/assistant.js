@@ -12,6 +12,7 @@
     const closeButton = document.getElementById("tvAssistantClose");
     const newChatButton = document.getElementById("tvAssistantNewChat");
     const messagesNode = document.getElementById("tvAssistantMessages");
+    const serviceNotice = document.getElementById("tvAssistantServiceNotice");
     const quickActionsNode = document.getElementById("tvAssistantQuickActions");
     const form = document.getElementById("tvAssistantForm");
     const input = document.getElementById("tvAssistantInput");
@@ -125,6 +126,7 @@
         input.value = "";
         setQuickActions([]);
         setBusy(true);
+        if (serviceNotice) serviceNotice.hidden = false;
         let pending = null;
         try {
             await ensureSession();
@@ -142,6 +144,7 @@
             addMessage("assistant", error.message);
             welcomeActions();
         } finally {
+            if (serviceNotice) serviceNotice.hidden = true;
             setBusy(false);
             input.focus();
         }
